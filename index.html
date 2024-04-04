@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- AOS Library CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        /* Dark mode styles */
+        .dark .bg-gray-100 {
+            background-color: #1f2937; /* Dark gray */
+        }
+        .dark .text-gray-100 {
+            color: #f3f4f6; /* Light gray */
+        }
+        .dark .bg-gray-800 {
+            background-color: #f3f4f6; /* Light gray */
+        }
+        .dark .text-gray-800 {
+            color: #1f2937; /* Dark gray */
+        }
+        .dark .bg-white {
+            background-color: #374151; /* Gray */
+        }
+        .dark .text-white {
+            color: #ffffff; /* White */
+        }
+        .dark .toggle-btn {
+            background-color: #4a5568; /* Gray */
+            color: #ffffff; /* White */
+        }
+        /* Navbar shadow effect */
+        .navbar-shadow {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg navbar-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <!-- Your logo image goes here -->
+                    <img src="logo.png" alt="Logo" class="h-8">
+                    <h1>E-SHOP</h1>
+                </div>
+                <!-- Navigation Links -->
+                <div class="hidden sm:block sm:ml-6">
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white">Login</a>
+                        <a href="#" class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white">Sign-up</a>
+                    </div>
+                </div>
+    
+                <!-- Responsive Navigation Toggle -->
+                <div class="sm:hidden">
+                    <button id="menu-toggle" aria-expanded="false" aria-controls="responsive-menu" class="text-gray-500 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zM4 12h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zM4 18h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Responsive Navigation Menu (hidden by default) -->
+            <div id="responsive-menu" class="hidden sm:hidden">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#" class="block text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white">Login</a>
+                    <a href="#" class="block text-gray-800 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white">Sign-up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dark Mode Toggle Button -->
+    <button id="dark-mode-toggle" class="toggle-btn fixed bottom-4 right-4 px-4 py-2 bg-gray-800 text-white rounded-full focus:outline-none">Dark Mode</button>
+
+    <!-- Carousel -->
+    <div id="carousel" class="relative bg-gray-800 h-96">
+        <div class="absolute inset-0 w-full h-full flex items-center justify-center">
+            <h2 id="carousel-text" class="text-white text-4xl font-bold">Explore Our Electronic Gadgets</h2>
+        </div>
+        <div class="absolute inset-0 w-full h-full flex items-center justify-center overflow-hidden">
+            <div id="image-carousel" class="h-full flex">
+                <img src="image1.jpg" alt="Electronic Gadget 1" class="carousel-slide">
+                <img src="image2.jpg" alt="Electronic Gadget 2" class="carousel-slide">
+                <img src="image3.jpg" alt="Electronic Gadget 3" class="carousel-slide">
+            </div>
+        </div>
+    </div>
+
+    <!-- Upcoming Features Section -->
+    <section class="py-12 bg-white dark:bg-gray-800" data-aos="fade-up" data-aos-duration="1000">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">Upcoming Features</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">Get ready for our exciting upcoming sale! We're constantly adding new features to make your shopping experience better. Our website offers unique features such as personalized recommendations and hassle-free returns.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Satisfaction Section -->
+    <section class="py-12 bg-gray-100 dark:bg-gray-800" data-aos="fade-up" data-aos-duration="1000">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">Customer Satisfaction</h2>
+                <div class="max-w-2xl mx-auto">
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md flex items-center">
+                        <img src="user1.jpeg" alt="User 1" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="text-gray-700 dark:text-gray-200 mb-2">"Wow! This website is fantastic. I found the perfect laptop for my needs, and the checkout process was a breeze."</p>
+                            <p class="text-gray-600 dark:text-gray-300">- Sarah Smith</p>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 p-6 mt-6 rounded-lg shadow-md flex items-center">
+                        <img src="user2.jpg" alt="User 2" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="text-gray-700 dark:text-gray-200 mb-2">"I've been shopping here for years, and I'm always impressed by the quality of products and excellent customer service."</p>
+                            <p class="text-gray-600 dark:text-gray-300">- Michael Johnson</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 dark:bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between">
+            <div>
+                <h3 class="text-lg font-bold mb-4">Contact Us</h3>
+                <p class="mb-2 text-gray-100 dark:text-black-300">Dy Patil College of engineering</p>
+                <p class="mb-2 text-gray-100 dark:text-gray-300">Ravet, Pune</p>
+                <p class="mb-2 text-gray-100 dark:text-gray-300">amartyapaul252@gmail.com</p>
+            </div>
+            <div class="mt-6 sm:mt-0">
+                <h3 class="text-lg font-bold mb-4">Follow Us</h3>
+                <p class="mb-2 text-gray-100 dark:text-gray-300">Facebook</p>
+                <p class="mb-2 text-gray-100 dark:text-gray-300">Twitter</p>
+                <p class="mb-2 text-gray-100 dark:text-gray-300">Instagram</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+        
+        const carouselText = document.getElementById('carousel-text');
+        const imageCarousel = document.getElementById('image-carousel');
+        const images = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // Replace with your image URLs
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const imageUrl = images[index];
+            carouselText.textContent = "Explore Our Electronic Gadgets";
+            imageCarousel.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        setInterval(nextImage, 3000); // Change image every 3 seconds
+
+        // Initialize with first image
+        showImage(currentIndex);
+        
+        const menuToggle = document.getElementById('menu-toggle');
+        const responsiveMenu = document.getElementById('responsive-menu');
+
+        menuToggle.addEventListener('click', () => {
+            const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+            menuToggle.setAttribute('aria-expanded', !expanded);
+            responsiveMenu.classList.toggle('hidden');
+        });
+
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+        });
+    </script>
+
+</body>
+</html>
